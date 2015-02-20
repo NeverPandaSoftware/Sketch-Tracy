@@ -28,11 +28,7 @@ public class CharacterSwitch : MonoBehaviour
         sketch = sketchObject.GetComponent<PlayerController>();
         tracy = tracyObject.GetComponent<PlayerController>();
         cam = cameraObject.GetComponent<CameraFollow>();
-    }
-
-    void FixedUpdate()
-    {
-
+        GameManager.Instance.SetCharacterState(CharacterState.Sketch);
     }
 
     // Update is called once per frame
@@ -40,21 +36,7 @@ public class CharacterSwitch : MonoBehaviour
     {
         if (Input.GetButtonDown("SwitchCharacter"))
         {
-            sketchActiveStatus = sketch.playerControl;
-            tracyActiveStatus = tracy.playerControl;
-
-            if (tracyActiveStatus)
-            {
-                tracy.Deactivate();
-                sketch.Activate();
-                ChangeCameraTarget(sketchObject);
-            }
-            else if (sketchActiveStatus)
-            {
-                sketch.Deactivate();
-                tracy.Activate();
-                ChangeCameraTarget(tracyObject);
-            }
+            SwitchCharacters();
         }
 
         if (Input.GetButtonDown("TeamUp"))
@@ -86,15 +68,13 @@ public class CharacterSwitch : MonoBehaviour
         Vector3 spawnLocation = sketchObject.transform.position;
         Quaternion rotation = sketchObject.transform.rotation;
 
-        sketch.playerControl = false;
-        tracy.playerControl = false;
-
         Destroy(sketchObject);
         Destroy(tracyObject);
 
         teamObject = (GameObject)Instantiate(teamPreFab, spawnLocation, rotation);
         teamObject.name = "Team";
-        teamObject.GetComponent<PlayerController>().playerControl = true;
+
+        GameManager.Instance.SetCharacterState(CharacterState.Team);
 
         ChangeCameraTarget(teamObject);
     }
@@ -104,21 +84,37 @@ public class CharacterSwitch : MonoBehaviour
         Vector3 spawnLocation = teamObject.transform.position;
         Quaternion rotation = teamObject.transform.rotation;
 
-        teamObject.GetComponent<PlayerController>().playerControl = false;
         Destroy(teamObject);
 
         sketchObject = (GameObject)Instantiate(sketchPreFab, spawnLocation - new Vector3(0.5f, 0, 0), rotation);
         sketchObject.name = "Sketch";
         sketch = sketchObject.GetComponent<PlayerController>();
-        sketch.playerControl = true;
 
         tracyObject = (GameObject)Instantiate(tracyPreFab, spawnLocation + new Vector3(0.5f, 0, 0), rotation);
         tracyObject.name = "Tracy";
         tracy = tracyObject.GetComponent<PlayerController>();
 
+        GameManager.Instance.SetCharacterState(CharacterState.Sketch);
+
         teamedUp = false;
 
         ChangeCameraTarget(sketchObject);
+    }
+
+    void SwitchCharacters()
+    {
+        CharacterState curCharacterState = GameManager.Instance.GetCharacterState();
+
+        if (curCharacterState == CharacterState.Tracy)
+        {
+            GameManager.Instance.SetCharacterState(CharacterState.Sketch);
+            ChangeCameraTarget(sketchObject);
+        }
+        else if (curCharacterState == CharacterState.Sketch)
+        {
+            GameManager.Instance.SetCharacterState(CharacterState.Tracy);
+            ChangeCameraTarget(tracyObject);
+        }
     }
 
     void ChangeCameraTarget(GameObject newTarget)

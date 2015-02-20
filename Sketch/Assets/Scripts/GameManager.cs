@@ -1,23 +1,24 @@
-﻿public class GameManager
+﻿public class GameManager : Singleton<GameManager>
 {
-    private static GameManager instance;
+    #region Constructor & Variables
 
-    private GameManager()
+    protected GameManager() { }
+
+    private CharacterState characterState = CharacterState.Sketch;
+
+    #endregion
+
+    #region Getters & Setters
+
+    public CharacterState GetCharacterState()
     {
-
+        return characterState;
     }
 
-    public static GameManager Instance
+    public void SetCharacterState(CharacterState pCharacterState)
     {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new GameManager();
-            }
-
-            return instance;
-        }
+        characterState = pCharacterState;
     }
 
+    #endregion
 }

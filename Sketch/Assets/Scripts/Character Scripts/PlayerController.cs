@@ -6,12 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
 
+    public CharacterState myCharacterState;
+
     [HideInInspector]
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false;
 
-    public bool playerControl = false;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
     public LayerMask whatIsGround;
@@ -67,11 +68,14 @@ public class PlayerController : MonoBehaviour
         else
             activePlatform = null;
 
-        if (Input.GetButtonDown("Jump") && grounded && playerControl)
-            jump = true;
+        if (IsControllable())
+        {
+            if (Input.GetButtonDown("Jump") && grounded)
+                jump = true;
 
-        if (gameObject.tag == "Team" && Input.GetButtonDown("SwitchBall"))
-            SwitchBall();
+            if (myCharacterState == CharacterState.Team && Input.GetButtonDown("SwitchBall"))
+                SwitchBall();
+        }
 
         anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 
@@ -80,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerControl)
+        if (IsControllable())
         {
             float h = Input.GetAxis("Horizontal");
 
@@ -101,22 +105,6 @@ public class PlayerController : MonoBehaviour
                 jump = false;
             }
         }
-    }
-
-    #endregion
-
-    #region Character Control Methods
-
-    public void Activate()
-    {
-        playerControl = true;
-    }
-
-    public void Deactivate()
-    {
-        rigidbody2D.velocity = Vector2.zero;
-        anim.SetFloat("Speed", 0.0f);
-        playerControl = false;
     }
 
     #endregion
@@ -143,7 +131,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    playerControl = false;
+                    //playerControl = false;
                     theDoor.CloseDoor();
                 }
             }
@@ -159,7 +147,7 @@ public class PlayerController : MonoBehaviour
             {
                 theWell = wellAt.GetComponent<Well>();
                 transform.position = new Vector2(theWell.transform.position.x, transform.position.y);
-                playerControl = false;
+                //playerControl = false;
                 theWell.EnterWell();
             }
         }
@@ -232,6 +220,14 @@ public class PlayerController : MonoBehaviour
     void SwitchBall()
     {
         
+    }
+
+    private bool IsControllable()
+    {
+        if (myCharacterState == GameManager.Instance.GetCharacterState())
+            return true;
+        else
+            return false;
     }
 
     #endregion

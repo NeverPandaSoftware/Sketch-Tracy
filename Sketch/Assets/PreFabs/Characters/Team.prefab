@@ -136,9 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0293ec5e9c1c4fc4da117b63c53c1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCharacterState: 2
   facingRight: 1
   jump: 0
-  playerControl: 0
   maxSpeed: 3
   jumpForce: 2000
   whatIsGround:
