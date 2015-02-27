@@ -85,14 +85,16 @@
      <Compile Include="Assets\Scripts\Character Scripts\CharacterSwitch.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Interactive Objects\Checkpoint.cs" />
+     <Compile Include="Assets\Scripts\Interactive Objects\CheckpointManager.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\Door.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\Spring.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\Well.cs" />
      <Compile Include="Assets\Scripts\Platforms\FollowPath.cs" />
      <Compile Include="Assets\Scripts\Platforms\PathDefinition.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformMove.cs" />
-     <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\VideoPlay.cs" />
      <None Include="Assets\Dialogue System\_README.txt" />
      <None Include="Assets\Dialogue System\Examples\Mobile Test\_README.txt" />
@@ -141,14 +143,14 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="P2D.Runtime">
- <HintPath>M:/My Documents/GitHub/NeverPanda/Sketch-Tracy/Sketch/Assets/Physics 2D Extensions/_Main/P2D.Runtime.dll</HintPath>
- </Reference>
  <Reference Include="DialogueSystem">
  <HintPath>M:/My Documents/GitHub/NeverPanda/Sketch-Tracy/Sketch/Assets/Dialogue System/DLLs/DialogueSystem.dll</HintPath>
  </Reference>
  <Reference Include="LuaInterpreter">
  <HintPath>M:/My Documents/GitHub/NeverPanda/Sketch-Tracy/Sketch/Assets/Dialogue System/DLLs/LuaInterpreter.dll</HintPath>
+ </Reference>
+ <Reference Include="P2D.Runtime">
+ <HintPath>M:/My Documents/GitHub/NeverPanda/Sketch-Tracy/Sketch/Assets/Physics 2D Extensions/_Main/P2D.Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

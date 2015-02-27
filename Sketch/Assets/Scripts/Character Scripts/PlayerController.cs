@@ -28,12 +28,16 @@ public class PlayerController : MonoBehaviour
     //[HideInInspector]
     public GameObject wellAt;
 
+    public bool atCheckpoint = false;
+
     private Transform groundCheck;
     private RaycastHit2D groundHit;
     private bool grounded = false;
     private RaycastHit2D[] hits;
     private Animator anim;
     private bool ball = false;
+
+    private CheckpointManager checkpointManager;
 
     #endregion
 
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
+        checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
     }
 
     #endregion
@@ -75,6 +80,12 @@ public class PlayerController : MonoBehaviour
 
             if (myCharacterState == CharacterState.Team && Input.GetButtonDown("SwitchBall"))
                 SwitchBall();
+
+            //TEMPORARY RESPAWN KEY
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Respawn();
+            }
         }
 
         anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
@@ -175,6 +186,12 @@ public class PlayerController : MonoBehaviour
             atDoor = true;
             doorAt = col.gameObject;
         }
+
+        if (col.gameObject.tag == "Checkpoint")
+        {
+            atCheckpoint = true;
+            col.GetComponent<Checkpoint>().ActivateCheckpoint();
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -183,6 +200,11 @@ public class PlayerController : MonoBehaviour
         {
             atDoor = false;
             doorAt = null;
+        }
+
+        if (col.gameObject.tag == "Checkpoint")
+        {
+            atCheckpoint = false;
         }
     }
 
@@ -228,6 +250,11 @@ public class PlayerController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    void Respawn()
+    {
+        transform.position = checkpointManager.CurrentCheckpoint.Location;
     }
 
     #endregion
