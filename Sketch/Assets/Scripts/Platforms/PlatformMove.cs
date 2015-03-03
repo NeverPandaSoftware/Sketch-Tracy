@@ -13,7 +13,7 @@ public class PlatformMove : MonoBehaviour
 	void Start ()
 	{
 		timer = directionSwitchTime;
-		rigidbody2D.velocity = new Vector2 (moveSpeed_X, moveSpeed_Y);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (moveSpeed_X, moveSpeed_Y);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class PlatformMove : MonoBehaviour
 
 		if (timer < 0)
 		{
-			rigidbody2D.velocity *= -1;
+			GetComponent<Rigidbody2D>().velocity *= -1;
 			timer = directionSwitchTime;
 		}
 

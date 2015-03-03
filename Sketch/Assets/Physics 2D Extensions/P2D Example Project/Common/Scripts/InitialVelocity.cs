@@ -19,8 +19,8 @@ namespace Thinksquirrel.Phys2DExamples
 
         void Start()
         {
-            rigidbody2D.velocity = m_Velocity;
-            rigidbody2D.angularVelocity = m_AngularVelocity;
+            GetComponent<Rigidbody2D>().velocity = m_Velocity;
+            GetComponent<Rigidbody2D>().angularVelocity = m_AngularVelocity;
         }
     }
 }

@@ -7,10 +7,10 @@ public class VideoPlay : MonoBehaviour
 
 	void Start ()
     {
-        renderer.material.mainTexture = movie;
+        GetComponent<Renderer>().material.mainTexture = movie;
         movie.loop = true;
-        audio.clip = movie.audioClip;
+        GetComponent<AudioSource>().clip = movie.audioClip;
         movie.Play();
-        audio.Play();
+        GetComponent<AudioSource>().Play();
 	}
 }

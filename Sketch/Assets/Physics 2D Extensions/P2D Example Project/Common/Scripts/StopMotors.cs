@@ -24,7 +24,7 @@ namespace Thinksquirrel.Phys2DExamples
                 if (!wheel)
                     continue;
 
-                if (other == wheel.collider2D)
+                if (other == wheel.GetComponent<Collider2D>())
                 {
                     wheel.useMotor = false;
                 }

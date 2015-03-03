@@ -30,11 +30,11 @@ public class BallController : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         float force = move * speed;
         //rigidbody2D.AddTorque(-torque * move * Time.deltaTime);
-        rigidbody2D.AddForce(transform.right * force * Time.deltaTime);
+        GetComponent<Rigidbody2D>().AddForce(transform.right * force * Time.deltaTime);
 
         if (jump)
         {
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
             jump = false;
         }
 	}

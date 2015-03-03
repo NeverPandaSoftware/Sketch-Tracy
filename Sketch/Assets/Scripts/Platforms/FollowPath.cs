@@ -61,7 +61,7 @@ public class FollowPath : MonoBehaviour
     {
         Vector2 direction = (currentPoint.Current.position - transform.position).normalized;
         Vector2 distance = direction * Speed;
-        rigidbody2D.MovePosition(rigidbody2D.position + distance * Time.deltaTime);
+        GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + distance * Time.deltaTime);
 
         /*if (Type == FollowType.MoveTowards)
             rigidbody2D.position = Vector2.MoveTowards(transform.position, currentPoint.Current.position, Time.deltaTime * Speed);

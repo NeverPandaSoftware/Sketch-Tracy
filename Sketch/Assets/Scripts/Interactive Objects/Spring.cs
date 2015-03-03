@@ -17,9 +17,9 @@ public class Spring : MonoBehaviour
 
     private void ApplyForce(GameObject theObject)
     {
-        float force = CalculateForce(theObject.rigidbody2D.mass);
+        float force = CalculateForce(theObject.GetComponent<Rigidbody2D>().mass);
 
-        theObject.rigidbody2D.AddForce(new Vector2(0, force));
+        theObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, force));
     }
 
     void OnCollisionEnter2D(Collision2D col)

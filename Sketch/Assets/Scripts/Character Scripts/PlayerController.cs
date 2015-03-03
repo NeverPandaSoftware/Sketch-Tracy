@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+        anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
         HandleInteractiveObjects();
     }
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
             anim.SetFloat("Speed", Mathf.Abs(h));
 
-            rigidbody2D.velocity = new Vector2(h * maxSpeed, rigidbody2D.velocity.y);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(h * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
             HandleMovingPlatforms();
 
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
             if (jump)
             {
-                rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
                 jump = false;
             }
         }
@@ -169,9 +169,9 @@ public class PlayerController : MonoBehaviour
         if (activePlatform != null)
         {
             if (activePlatform.velocity.x > 0 && facingRight || activePlatform.velocity.x < 0 && !facingRight)
-                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x * 2, rigidbody2D.velocity.y);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * 2, GetComponent<Rigidbody2D>().velocity.y);
             else
-                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, rigidbody2D.velocity.y);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
         }
     }
 
