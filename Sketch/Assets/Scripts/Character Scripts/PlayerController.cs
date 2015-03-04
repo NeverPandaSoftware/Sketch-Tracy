@@ -116,6 +116,11 @@ public class PlayerController : MonoBehaviour
                 jump = false;
             }
         }
+        else
+        {
+            anim.SetFloat("Speed", 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        }
     }
 
     #endregion
