@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
-        checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
+        //checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
     }
 
     #endregion
@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
                 if (!theDoor.isOpen)
                 {
                     theDoor.OpenDoor();
+                    //theDoor.CloseDoor();
                 }
                 else
                 {

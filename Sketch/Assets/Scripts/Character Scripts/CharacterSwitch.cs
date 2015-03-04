@@ -28,7 +28,7 @@ public class CharacterSwitch : MonoBehaviour
         sketch = sketchObject.GetComponent<PlayerController>();
         tracy = tracyObject.GetComponent<PlayerController>();
         cam = cameraObject.GetComponent<CameraFollow>();
-        GameManager.Instance.SetCharacterState(CharacterState.Tracy);
+        GameManager.Instance.SetCharacterState(CharacterState.Sketch);
     }
 
     // Update is called once per frame
