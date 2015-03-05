@@ -4,7 +4,7 @@
 
     protected GameManager() { }
 
-    private CharacterState characterState = CharacterState.Sketch;
+    public CharacterState characterState = CharacterState.Sketch;
 
     #endregion
 
