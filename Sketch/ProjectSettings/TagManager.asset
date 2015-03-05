@@ -50,6 +50,9 @@ TagManager:
   - name: Background
     uniqueID: 2637177881
     locked: 0
+  - name: Checkpoints
+    uniqueID: 2749676927
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
