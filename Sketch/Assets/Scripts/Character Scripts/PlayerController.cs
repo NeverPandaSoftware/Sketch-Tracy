@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
     public CharacterState myCharacterState;
 
+    public GameObject ballPreFab;
+
+    private Rigidbody2D rigidbody2d;
+
     [HideInInspector]
     public bool facingRight = true;
     [HideInInspector]
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public GameObject wellAt;
 
     public bool atCheckpoint = false;
+    public GameObject checkpointAt;
 
     private Transform groundCheck;
     private RaycastHit2D groundHit;
@@ -47,7 +52,10 @@ public class PlayerController : MonoBehaviour
     {
         groundCheck = transform.Find("GroundCheck");
         anim = GetComponent<Animator>();
-        //checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
+        if (GameManager.Instance.GetCharacterState() == CharacterState.Ball)
+            SwitchFromBall();
     }
 
     #endregion
@@ -79,7 +87,13 @@ public class PlayerController : MonoBehaviour
                 jump = true;
 
             if (myCharacterState == CharacterState.Team && Input.GetButtonDown("SwitchBall"))
-                SwitchBall();
+                anim.SetTrigger("SwitchToBall");
+
+            if (Input.GetButtonDown("SpawnOtherCharacter") && atCheckpoint &&
+                myCharacterState != CharacterState.Team)
+            {
+                SpawnOtherCharacter();
+            }
 
             //TEMPORARY RESPAWN KEY
             if (Input.GetKeyDown(KeyCode.R))
@@ -88,7 +102,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetFloat("vSpeed", rigidbody2d.velocity.y);
 
         HandleInteractiveObjects();
     }
@@ -101,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
             anim.SetFloat("Speed", Mathf.Abs(h));
 
-            GetComponent<Rigidbody2D>().velocity = new Vector2(h * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            rigidbody2d.velocity = new Vector2(h * maxSpeed, rigidbody2d.velocity.y);
 
             HandleMovingPlatforms();
 
@@ -112,14 +126,14 @@ public class PlayerController : MonoBehaviour
 
             if (jump)
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+                rigidbody2d.AddForce(new Vector2(0f, jumpForce));
                 jump = false;
             }
         }
         else
         {
             anim.SetFloat("Speed", 0);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+            rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
         }
     }
 
@@ -175,9 +189,9 @@ public class PlayerController : MonoBehaviour
         if (activePlatform != null)
         {
             if (activePlatform.velocity.x > 0 && facingRight || activePlatform.velocity.x < 0 && !facingRight)
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * 2, GetComponent<Rigidbody2D>().velocity.y);
+                rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x * 2, rigidbody2d.velocity.y);
             else
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
+                rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, rigidbody2d.velocity.y);
         }
     }
 
@@ -196,6 +210,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Checkpoint")
         {
             atCheckpoint = true;
+            checkpointAt = col.gameObject;
             col.GetComponent<Checkpoint>().ActivateCheckpoint();
         }
     }
@@ -211,6 +226,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Checkpoint")
         {
             atCheckpoint = false;
+            checkpointAt = null;
         }
     }
 
@@ -247,7 +263,18 @@ public class PlayerController : MonoBehaviour
 
     void SwitchBall()
     {
-        
+        int direction = (facingRight) ? 1 : -1;
+        Vector2 pos = new Vector2(transform.position.x + (direction * 0.037f), transform.position.y - 0.486f);
+        GameObject ball = (GameObject)Instantiate(ballPreFab, pos, transform.rotation);
+        ball.name = "Ball";
+        ball.GetComponent<BallController>().facingRight = facingRight;
+        GameManager.Instance.SetCharacterState(CharacterState.Ball);
+        Destroy(gameObject);
+    }
+
+    public void SwitchFromBall()
+    {
+        anim.SetTrigger("SwitchFromBall");
     }
 
     private bool IsControllable()
@@ -256,6 +283,36 @@ public class PlayerController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    void SpawnOtherCharacter()
+    {
+        if (myCharacterState == CharacterState.Sketch)
+        {
+            GameObject tracyObj = GameObject.FindGameObjectWithTag("Tracy");
+
+            if (tracyObj != null)
+                tracyObj.transform.position = checkpointAt.transform.position;
+            else
+            {
+                GameObject tracyPreFab = GameObject.Find("GameController").GetComponent<CharacterSwitch>().Characters.Tracy;
+                GameObject tracy = (GameObject)Instantiate(tracyPreFab, checkpointAt.transform.position, checkpointAt.transform.rotation);
+                tracy.name = "Tracy";
+            }
+        }
+        else if (myCharacterState == CharacterState.Tracy)
+        {
+            GameObject sketchObj = GameObject.FindGameObjectWithTag("Sketch");
+
+            if (sketchObj != null)
+                sketchObj.transform.position = checkpointAt.transform.position;
+            else
+            {
+                GameObject sketchPreFab = GameObject.Find("GameObject").GetComponent<CharacterSwitch>().Characters.Sketch;
+                GameObject sketch = (GameObject)Instantiate(sketchPreFab, checkpointAt.transform.position, checkpointAt.transform.rotation);
+                sketch.name = "Sketch";
+            }
+        }
     }
 
     void Respawn()

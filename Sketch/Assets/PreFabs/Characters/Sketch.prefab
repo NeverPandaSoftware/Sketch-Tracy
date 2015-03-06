@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCharacterState: 0
+  ballPreFab: {fileID: 192286, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
   facingRight: 1
   jump: 0
   maxSpeed: 4
@@ -144,6 +145,7 @@ MonoBehaviour:
   atWell: 0
   wellAt: {fileID: 0}
   atCheckpoint: 0
+  checkpointAt: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

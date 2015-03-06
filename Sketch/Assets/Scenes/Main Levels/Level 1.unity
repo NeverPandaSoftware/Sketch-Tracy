@@ -698,6 +698,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
   m_IsPrefabParent: 0
@@ -999,10 +1003,6 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4fd20e390ddc0f740a5bc04e2936b785, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &691671799
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
-  m_PrefabInternal: {fileID: 529973327}
 --- !u!1 &699158398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,13 +1030,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fafefafd71c77545b74b452399b0e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sketchPreFab: {fileID: 100002, guid: 7541ef1274cfcc543b34fe8642b3721c, type: 2}
-  tracyPreFab: {fileID: 100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
-  teamPreFab: {fileID: 100000, guid: ad6052c86fe5a414aaf1cd59212d10b7, type: 2}
-  sketchObject: {fileID: 1976075980}
-  tracyObject: {fileID: 691671799}
-  teamObject: {fileID: 100000, guid: ad6052c86fe5a414aaf1cd59212d10b7, type: 2}
-  cameraObject: {fileID: 364064067}
+  Characters:
+    Sketch: {fileID: 100002, guid: 7541ef1274cfcc543b34fe8642b3721c, type: 2}
+    Tracy: {fileID: 100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
+    Team: {fileID: 100000, guid: ad6052c86fe5a414aaf1cd59212d10b7, type: 2}
   teamDistance: .75
 --- !u!4 &699158400
 Transform:
@@ -1561,48 +1558,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5.8499999, y: 2}
---- !u!1001 &841834421
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 37.8090172
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.3533721
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 416660, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &874365227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,10 +2882,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e2f6e5a987b07444b8dd6649f5958cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1976075980
-GameObject:
-  m_PrefabParentObject: {fileID: 100002, guid: 7541ef1274cfcc543b34fe8642b3721c, type: 2}
-  m_PrefabInternal: {fileID: 2046488683}
 --- !u!1001 &2046488683
 Prefab:
   m_ObjectHideFlags: 0
@@ -2970,6 +2921,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11414114, guid: 7541ef1274cfcc543b34fe8642b3721c, type: 2}
+      propertyPath: ballPreFab
+      value: 
+      objectReference: {fileID: 192286, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7541ef1274cfcc543b34fe8642b3721c, type: 2}
   m_IsPrefabParent: 0
@@ -3019,6 +2974,10 @@ Prefab:
     - target: {fileID: 6199846, guid: 18dfb55f02e957d4f8a1c3745e94fa00, type: 2}
       propertyPath: m_UsedByEffector
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499846, guid: 18dfb55f02e957d4f8a1c3745e94fa00, type: 2}
+      propertyPath: sceneToLoad
+      value: DicksonExperiment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18dfb55f02e957d4f8a1c3745e94fa00, type: 2}

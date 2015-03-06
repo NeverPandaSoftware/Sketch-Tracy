@@ -5,6 +5,10 @@ using System.Collections;
 public class BallController : MonoBehaviour
 {
     public CharacterState myCharacterState = CharacterState.Ball;
+    public GameObject teamPreFab;
+    public bool facingRight = true;
+    public Transform teamPtLeft;
+    public Transform teamPtRight;
 
     [SerializeField] private float movePower = 5;
     [SerializeField] private bool useTorque = true;
@@ -17,19 +21,34 @@ public class BallController : MonoBehaviour
 
     private const float GROUND_RAY_LENGTH = 0.2f;
     private Rigidbody2D rigidbody2d;
+    private Animator anim;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 	}
 
     void Update()
     {
         move = Input.GetAxis("Horizontal");
+
+        if ((move > 0 && !facingRight) || (move < 0 && facingRight))
+            facingRight = !facingRight;
+
         if (Physics2D.Raycast(transform.position, -Vector2.up, GROUND_RAY_LENGTH, whatIsGround) && Input.GetButtonDown("Jump"))
         {
             jump = true;
+        }
+
+        if (Input.GetButtonDown("SwitchBall"))
+        {
+            rigidbody2d.gravityScale = 0;
+            int direction = (facingRight) ? 1 : -1;
+            Vector2 pos = new Vector2(transform.position.x - (direction * 0.037f), transform.position.y + 0.486f);
+            transform.position = pos;
+            anim.SetTrigger("SwitchFromBall");
         }
     }
 	
@@ -69,5 +88,13 @@ public class BallController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    private void SwitchFromBall()
+    {
+        GameObject team = (GameObject)Instantiate(teamPreFab, transform.position, Quaternion.identity);
+        team.name = "Team";
+        GameManager.Instance.SetCharacterState(CharacterState.Team);
+        Destroy(gameObject);
     }
 }
