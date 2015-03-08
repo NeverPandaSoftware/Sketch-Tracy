@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Autodesk_Cache_File>
+  <cacheType Type="OneFile" Format="mcx"/>
+  <time Range="250-125000"/>
+  <cacheTimePerFrame TimePerFrame="250"/>
+  <cacheVersion Version="2.0"/>
+  <extra>/Users/student/Desktop/Sketch/Title Screen/TitleScreenMaya/scenes/TitleScreen_v2.ma</extra>
+  <extra>maya 2015</extra>
+  <extra>student</extra>
+  <Channels>
+    <channel0 ChannelName="Wall01Shape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel1 ChannelName="Wall02Shape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel2 ChannelName="DeskShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel3 ChannelName="nRigidShape1" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel4 ChannelName="outputCloth6" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel5 ChannelName="String01|outputCloth5" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel6 ChannelName="outputCloth12" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel7 ChannelName="outputCloth13" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel8 ChannelName="String06|outputCloth9" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel9 ChannelName="outputCloth8" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel10 ChannelName="outputCloth10" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel11 ChannelName="outputCloth11" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel12 ChannelName="outputCloth4" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel13 ChannelName="outputCloth2" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel14 ChannelName="Pencil:PencilShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel15 ChannelName="Sketchbook:SketchbookShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel16 ChannelName="Sketchbook:RingBinding1Shape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel17 ChannelName="ScrapPaperShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel18 ChannelName="TapeShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel19 ChannelName="ScrapPaperOnTapeShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel20 ChannelName="PencilSharpener:PencilSharpenerShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel21 ChannelName="PencilSharpener:PencilShavingsTrayShape" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+    <channel22 ChannelName="Title|outputCloth1" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="125000"/>
+  </Channels>
+</Autodesk_Cache_File>
