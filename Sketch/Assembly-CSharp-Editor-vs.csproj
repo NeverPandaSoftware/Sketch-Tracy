@@ -97,6 +97,7 @@
      <None Include="Assets\Dialogue System\Prefabs\_README.txt" />
      <None Include="Assets\Dialogue System\Examples\Feature Demo\Menu Text Demo\_README.txt" />
      <None Include="Assets\Dialogue System\Examples\Feature Demo\Articy Feature Demo\Articy Feature Demo.xml" />
+     <None Include="Assets\Models\TitleScreenBig.xml" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>M:/My Documents/GitHub/NeverPanda/Sketch-Tracy/Sketch/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
