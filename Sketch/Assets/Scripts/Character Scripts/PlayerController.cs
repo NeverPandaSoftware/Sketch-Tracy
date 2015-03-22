@@ -261,6 +261,19 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    void OnStartDraw()
+    {
+        rigidbody2d.isKinematic = true;
+        anim.SetBool("Draw", false);
+        anim.SetBool("Drawing", true);
+    }
+
+    void OnEndDraw()
+    {
+        rigidbody2d.isKinematic = false;
+        anim.SetBool("Drawing", false);
+    }
+
     void SwitchBall()
     {
         int direction = (facingRight) ? 1 : -1;
@@ -268,6 +281,11 @@ public class PlayerController : MonoBehaviour
         GameObject ball = (GameObject)Instantiate(ballPreFab, pos, transform.rotation);
         ball.name = "Ball";
         ball.GetComponent<BallController>().facingRight = facingRight;
+
+        CameraFollow cam = Camera.main.GetComponent<CameraFollow>();
+        if (cam != null)
+            cam.SetTarget(ball.transform);
+
         GameManager.Instance.SetCharacterState(CharacterState.Ball);
         Destroy(gameObject);
     }
@@ -292,12 +310,16 @@ public class PlayerController : MonoBehaviour
             GameObject tracyObj = GameObject.FindGameObjectWithTag("Tracy");
 
             if (tracyObj != null)
+            {
                 tracyObj.transform.position = checkpointAt.transform.position;
+                tracyObj.GetComponent<Animator>().SetBool("Draw", true);
+            }
             else
             {
                 GameObject tracyPreFab = GameObject.Find("GameController").GetComponent<CharacterSwitch>().Characters.Tracy;
                 GameObject tracy = (GameObject)Instantiate(tracyPreFab, checkpointAt.transform.position, checkpointAt.transform.rotation);
                 tracy.name = "Tracy";
+                tracy.GetComponent<Animator>().SetBool("Draw", true);
             }
         }
         else if (myCharacterState == CharacterState.Tracy)
@@ -305,13 +327,20 @@ public class PlayerController : MonoBehaviour
             GameObject sketchObj = GameObject.FindGameObjectWithTag("Sketch");
 
             if (sketchObj != null)
-                sketchObj.transform.position = checkpointAt.transform.position;
-            else
             {
-                GameObject sketchPreFab = GameObject.Find("GameObject").GetComponent<CharacterSwitch>().Characters.Sketch;
-                GameObject sketch = (GameObject)Instantiate(sketchPreFab, checkpointAt.transform.position, checkpointAt.transform.rotation);
-                sketch.name = "Sketch";
+                Debug.Log("SKETCH FOUND");
+                //sketchObj.transform.position = checkpointAt.transform.position;
+                //sketchObj.GetComponent<Animator>().SetBool("Draw", true);
+                Destroy(sketchObj);
             }
+            //else
+            //{
+                GameObject sketchPreFab = GameObject.Find("GameController").GetComponent<CharacterSwitch>().Characters.Sketch;
+                GameObject sketch = (GameObject)Instantiate(sketchPreFab, checkpointAt.transform.position, checkpointAt.transform.rotation);
+                sketch.GetComponent<Rigidbody2D>().isKinematic = true;
+                sketch.name = "Sketch";
+                sketch.GetComponent<Animator>().SetBool("Draw", true);
+           // }
         }
     }
 

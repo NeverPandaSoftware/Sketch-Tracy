@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
      <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Helpers\AxisLock.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\CheckpointManager.cs" />
      <Compile Include="Assets\Scripts\Interactive Objects\Door.cs" />

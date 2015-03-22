@@ -57,7 +57,8 @@ public class CharacterSwitch : MonoBehaviour
             }
             else
             {
-                UnTeam();
+                if (GameManager.Instance.GetCharacterState() != CharacterState.Ball)
+                    UnTeam();
             }
         }
     }

@@ -68,7 +68,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mass: 4
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   ballPreFab: {fileID: 192286, guid: 24c91d18e1dadc94faba189601c48177, type: 2}
   facingRight: 1
   jump: 0
-  maxSpeed: 3
+  maxSpeed: 4
   jumpForce: 2000
   whatIsGround:
     serializedVersion: 2

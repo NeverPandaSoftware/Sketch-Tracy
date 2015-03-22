@@ -94,6 +94,11 @@ public class BallController : MonoBehaviour
     {
         GameObject team = (GameObject)Instantiate(teamPreFab, transform.position, Quaternion.identity);
         team.name = "Team";
+
+        CameraFollow cam = Camera.main.GetComponent<CameraFollow>();
+        if (cam != null)
+            cam.SetTarget(team.transform);
+
         GameManager.Instance.SetCharacterState(CharacterState.Team);
         Destroy(gameObject);
     }

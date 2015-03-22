@@ -1,6 +1,13 @@
 fileFormatVersion: 2
 guid: 8b0d5528dfef64846a33de13861b5028
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sketch_Stand_SS_0
+    21300002: Sketch_Stand_SS_1
+    21300004: Sketch_Stand_SS_2
+    21300006: Sketch_Stand_SS_3
+    21300008: Sketch_Stand_SS_4
+    21300010: Sketch_Stand_SS_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +26,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
@@ -29,12 +39,14 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -54,6 +66,7 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sketch_Stand_SS_1
       rect:
         serializedVersion: 2
@@ -63,6 +76,7 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sketch_Stand_SS_2
       rect:
         serializedVersion: 2
@@ -72,6 +86,7 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sketch_Stand_SS_3
       rect:
         serializedVersion: 2
@@ -81,6 +96,7 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sketch_Stand_SS_4
       rect:
         serializedVersion: 2
@@ -90,6 +106,7 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sketch_Stand_SS_5
       rect:
         serializedVersion: 2
@@ -99,5 +116,8 @@ TextureImporter:
         height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
