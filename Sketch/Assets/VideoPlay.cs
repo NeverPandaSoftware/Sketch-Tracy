@@ -5,6 +5,9 @@ public class VideoPlay : MonoBehaviour
 {
     public MovieTexture movie;
 
+    public GameObject door;
+    private float timer = 15;
+
 	void Start ()
     {
         GetComponent<Renderer>().material.mainTexture = movie;
@@ -13,4 +16,12 @@ public class VideoPlay : MonoBehaviour
         movie.Play();
         GetComponent<AudioSource>().Play();
 	}
+
+    void Update()
+    {
+        if (timer > 0)
+            timer -= Time.deltaTime;
+        else
+            door.SetActive(true);
+    }
 }

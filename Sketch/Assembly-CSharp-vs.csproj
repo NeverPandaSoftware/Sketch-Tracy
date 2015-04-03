@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\Character Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\CharacterSpawner.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\DataController.cs" />
      <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\Singleton.cs" />
      <Compile Include="Assets\Scripts\Helpers\AxisLock.cs" />
