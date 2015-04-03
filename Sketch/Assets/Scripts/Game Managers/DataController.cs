@@ -25,6 +25,7 @@ public class DataController : Singleton<DataController>
         int saveSlotIndex = GetNextAvailableSaveSlot();
         fileName = DEFAULT_SAVE_NAME + saveSlotIndex;
         SaveGame();
+        Debug.Log("File " + fileName + " created successfully!");
         Application.LoadLevel("Level 1");
     }
 
@@ -68,17 +69,24 @@ public class DataController : Singleton<DataController>
 
     #region Load Game
 
-    public void LoadGame()
+    public void LoadGame(int pSaveSlotIndex)
     {
-        if (File.Exists(Application.persistentDataPath + "/" + fileName + ".dat"))
+        string fileToLoad = DEFAULT_SAVE_NAME + pSaveSlotIndex;
+
+        if (File.Exists(Application.persistentDataPath + "/" + fileToLoad + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + fileName + ".dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/" + fileToLoad + ".dat", FileMode.Open);
 
             GameData data = (GameData)bf.Deserialize(file);
             file.Close();
 
             fileName = data.fileName;
+            Debug.Log("File " + fileName + " loaded successfully!");
+        }
+        else
+        {
+            Debug.Log("File " + fileName + " does not exist!");
         }
     }
 
