@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2046488684}
   dampTime: .150000006
-  camMinX: 4.30000019
+  camMinX: 5
   camMaxX: 100
   camMinY: 0
   camMaxY: 10
