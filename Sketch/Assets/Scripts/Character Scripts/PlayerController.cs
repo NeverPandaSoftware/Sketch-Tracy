@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             float h = Input.GetAxis("Horizontal");
 
-            if (Mathf.Abs(h) > 0.1f)
+            if (Mathf.Abs(h) > 0.1f && grounded)
                 soundManager.Play(CharacterAudio.Walk);
             else
                 soundManager.Stop(CharacterAudio.Walk);

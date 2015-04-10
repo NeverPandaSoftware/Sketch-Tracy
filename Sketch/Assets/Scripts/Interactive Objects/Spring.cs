@@ -26,6 +26,7 @@ public class Spring : MonoBehaviour
     {
         if (col.gameObject.GetComponent<Rigidbody2D>() && col.relativeVelocity.y > 0)
         {
+            GetComponent<AudioSource>().Play();
             string tag = col.gameObject.tag;
             switch (springType)
             {
