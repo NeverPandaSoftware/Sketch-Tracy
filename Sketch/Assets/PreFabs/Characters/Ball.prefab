@@ -155,7 +155,7 @@ MonoBehaviour:
   jumpPower: 50
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 21504
+    m_Bits: 54272
 --- !u!212 &21236280
 SpriteRenderer:
   m_ObjectHideFlags: 1
