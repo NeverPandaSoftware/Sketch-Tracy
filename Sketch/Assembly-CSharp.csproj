@@ -83,6 +83,7 @@
      <Compile Include="Assets\Physics 2D Extensions\P2D Example Project\Common\Scripts\StopMotors.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\BallController.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\CharacterSoundManager.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\CharacterSwitch.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\CharacterSpawner.cs" />

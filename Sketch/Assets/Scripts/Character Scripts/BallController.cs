@@ -23,11 +23,14 @@ public class BallController : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private Animator anim;
 
+    private CharacterSoundManager soundManager;
+
 	// Use this for initialization
 	void Awake ()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundManager = GetComponent<CharacterSoundManager>();
 	}
 
     void Update()
@@ -44,6 +47,7 @@ public class BallController : MonoBehaviour
 
         if (Input.GetButtonDown("SwitchBall"))
         {
+            soundManager.Play(CharacterAudio.Uncrumple);
             rigidbody2d.gravityScale = 0;
             int direction = (facingRight) ? 1 : -1;
             Vector2 pos = new Vector2(transform.position.x - (direction * 0.037f), transform.position.y + 0.486f);

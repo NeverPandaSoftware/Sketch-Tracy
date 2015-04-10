@@ -110,6 +110,8 @@ public class CharacterSwitch : MonoBehaviour
         teamObject = (GameObject)Instantiate(Characters.Team, spawnLocation, rotation);
         teamObject.name = "Team";
 
+        teamObject.GetComponent<PlayerController>().soundManager.Play(CharacterAudio.TeamUp);
+
         GameManager.Instance.SetCharacterState(CharacterState.Team);
 
         ChangeCameraTarget(teamObject);
@@ -123,10 +125,12 @@ public class CharacterSwitch : MonoBehaviour
 
         Destroy(teamObject);
 
-        sketchObject = (GameObject)Instantiate(Characters.Sketch, spawnLocation - new Vector3(0.5f, 0, 0), rotation);
+        sketchObject = (GameObject)Instantiate(Characters.Sketch, spawnLocation + new Vector3(0.5f, 0, 0), rotation);
         sketchObject.name = "Sketch";
 
-        tracyObject = (GameObject)Instantiate(Characters.Tracy, spawnLocation + new Vector3(0.5f, 0, 0), rotation);
+        sketchObject.GetComponent<PlayerController>().soundManager.Play(CharacterAudio.Lift);
+
+        tracyObject = (GameObject)Instantiate(Characters.Tracy, spawnLocation - new Vector3(0.5f, 0, 0), rotation);
         tracyObject.name = "Tracy";
 
         GameManager.Instance.SetCharacterState(CharacterState.Sketch);

@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private bool ball = false;
 
     private CheckpointManager checkpointManager;
+    public CharacterSoundManager soundManager;
 
     #endregion
 
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         checkpointManager = GameObject.Find("Checkpoints").GetComponent<CheckpointManager>();
+        soundManager = GetComponent<CharacterSoundManager>();
         if (GameManager.Instance.GetCharacterState() == CharacterState.Ball)
             SwitchFromBall();
     }
@@ -87,7 +89,10 @@ public class PlayerController : MonoBehaviour
                 jump = true;
 
             if (myCharacterState == CharacterState.Team && Input.GetButtonDown("SwitchBall"))
+            {
+                soundManager.Play(CharacterAudio.Crumple);
                 anim.SetTrigger("SwitchToBall");
+            }
 
             if (Input.GetButtonDown("SpawnOtherCharacter") && atCheckpoint &&
                 myCharacterState != CharacterState.Team)
@@ -113,6 +118,11 @@ public class PlayerController : MonoBehaviour
         {
             float h = Input.GetAxis("Horizontal");
 
+            if (Mathf.Abs(h) > 0.1f)
+                soundManager.Play(CharacterAudio.Walk);
+            else
+                soundManager.Stop(CharacterAudio.Walk);
+
             anim.SetFloat("Speed", Mathf.Abs(h));
 
             rigidbody2d.velocity = new Vector2(h * maxSpeed, rigidbody2d.velocity.y);
@@ -127,6 +137,7 @@ public class PlayerController : MonoBehaviour
             if (jump)
             {
                 rigidbody2d.AddForce(new Vector2(0f, jumpForce));
+                soundManager.Play(CharacterAudio.Jump);
                 jump = false;
             }
         }

@@ -14,6 +14,8 @@ GameObject:
   - 61: {fileID: 6100002}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11487216}
+  - 82: {fileID: 8247050}
+  - 114: {fileID: 11456180}
   m_Layer: 9
   m_Name: Team
   m_TagString: Team
@@ -102,6 +104,75 @@ BoxCollider2D:
   m_Offset: {x: .0985031128, y: -.054721117}
   serializedVersion: 2
   m_Size: {x: .367385209, y: .780558109}
+--- !u!82 &8247050
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -119,6 +190,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11456180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7092fc6e89279489de942db3ea0b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio:
+    AirplaneFold: {fileID: 8300000, guid: ccb9ded4345dbf747970baa1f8ad2424, type: 3}
+    Crumple: {fileID: 8300000, guid: 1766f4289f6a04849b966eac325c84ac, type: 3}
+    Cut: {fileID: 8300000, guid: d877ed0bde511ce42b4ece12f0f59e3a, type: 3}
+    Draw: {fileID: 8300000, guid: fa3fcae152a3eed4c9bc3652d73c2c5e, type: 3}
+    Jump: {fileID: 8300000, guid: a726e3d03cbe7d94fb682fccf2d49ccc, type: 3}
+    Land: {fileID: 8300000, guid: 0a5af40a3f59a4e42bf4e7ef7841bc87, type: 3}
+    Lift: {fileID: 8300000, guid: 6913fcf4aeb8efc428bdf817a3e91424, type: 3}
+    TeamUp: {fileID: 8300000, guid: cb8ada11acd194244980abf7bf2ebe7d, type: 3}
+    Uncrumple: {fileID: 8300000, guid: 279e6279984109b45917333b225d7e53, type: 3}
+    Walk: {fileID: 8300000, guid: 4566fb735281c7546b50555f3e94b0e9, type: 3}
 --- !u!114 &11487216
 MonoBehaviour:
   m_ObjectHideFlags: 1
