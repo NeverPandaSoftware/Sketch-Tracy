@@ -945,7 +945,7 @@ GameObject:
   - 68: {fileID: 318329979}
   - 68: {fileID: 318329980}
   - 251: {fileID: 318329982}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: Ground004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,6 +1527,10 @@ Prefab:
     - target: {fileID: 400000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cae1135970f487b4b8f301a29ae82956, type: 2}
@@ -2812,11 +2816,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 871074892}
   - 212: {fileID: 871074891}
-  - 61: {fileID: 871074896}
-  - 61: {fileID: 871074895}
-  - 251: {fileID: 871074894}
-  - 68: {fileID: 871074893}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: SketchHouse1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2861,61 +2861,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 746571561}
   m_RootOrder: 1
---- !u!68 &871074893
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871074890}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: .508642197, y: 1.03784084}
-  - {x: 1.32367897, y: 1.75591409}
-  - {x: 2.15047264, y: .8807621}
---- !u!251 &871074894
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871074890}
-  m_Enabled: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
-  m_SideAngleVariance: 0
---- !u!61 &871074895
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871074890}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: -.387163162, y: 1.12280202}
-  serializedVersion: 2
-  m_Size: {x: 2.61112642, y: .262517333}
---- !u!61 &871074896
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871074890}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: -.47621727, y: -.166487455}
-  serializedVersion: 2
-  m_Size: {x: 1.79804659, y: .161854029}
 --- !u!1 &874365227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,11 +3135,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 956303929}
   - 212: {fileID: 956303928}
-  - 61: {fileID: 956303933}
-  - 61: {fileID: 956303932}
-  - 61: {fileID: 956303931}
-  - 251: {fileID: 956303930}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: SketchTree6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,59 +3180,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 665086331}
   m_RootOrder: 3
---- !u!251 &956303930
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 956303927}
-  m_Enabled: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
-  m_SideAngleVariance: 0
---- !u!61 &956303931
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 956303927}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: 1.17377472, y: .830752969}
-  serializedVersion: 2
-  m_Size: {x: .971588135, y: .178360701}
---- !u!61 &956303932
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 956303927}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: -.235836029, y: 1.10409725}
-  serializedVersion: 2
-  m_Size: {x: 1.81843567, y: 1.0251925}
---- !u!61 &956303933
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 956303927}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: -1.63470459, y: .525250435}
-  serializedVersion: 2
-  m_Size: {x: 1.03590393, y: .210518837}
 --- !u!1 &992033273
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,10 +4344,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1385448199}
   - 212: {fileID: 1385448200}
-  - 61: {fileID: 1385448202}
-  - 68: {fileID: 1385448201}
-  - 251: {fileID: 1385448203}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: SketchHouse2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4504,53 +4389,6 @@ SpriteRenderer:
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: dc1afde5909a69445894bdda6706ff71, type: 3}
   m_Color: {r: .823529422, g: .823529422, b: .823529422, a: 1}
---- !u!68 &1385448201
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1385448198}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -.517021179, y: .824279666}
-  - {x: .539604187, y: 1.83280957}
-  - {x: 1.09342957, y: 1.28909361}
-  - {x: 1.07335663, y: 1.75580466}
-  - {x: 1.45470428, y: 1.76163518}
-  - {x: 1.46976471, y: 1.51926434}
-  - {x: 1.61830139, y: 1.52730525}
-  - {x: 2.6892395, y: .707910895}
---- !u!61 &1385448202
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1385448198}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: -1.25569916, y: .882463813}
-  serializedVersion: 2
-  m_Size: {x: 2.34315348, y: .434698343}
---- !u!251 &1385448203
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1385448198}
-  m_Enabled: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
-  m_SideAngleVariance: 0
 --- !u!1 &1389575488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,7 +4865,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462454, guid: ff7390f56937b1c46b908c07f787e975, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff7390f56937b1c46b908c07f787e975, type: 2}
@@ -5127,9 +4965,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1626511574}
   - 212: {fileID: 1626511573}
-  - 61: {fileID: 1626511576}
-  - 251: {fileID: 1626511575}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: SketchTree4Still
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5174,33 +5010,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 665086331}
   m_RootOrder: 2
---- !u!251 &1626511575
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1626511572}
-  m_Enabled: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OneWay: 1
-  m_SideFriction: 0
-  m_SideBounce: 0
-  m_SideAngleVariance: 0
---- !u!61 &1626511576
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1626511572}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: .0107192993, y: 1.38280153}
-  serializedVersion: 2
-  m_Size: {x: 4.19178867, y: .510663033}
 --- !u!1 &1679457471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6058,10 +5867,6 @@ Prefab:
       propertyPath: sceneToLoad
       value: DicksonExperiment
       objectReference: {fileID: 0}
-    - target: {fileID: 199846, guid: 18dfb55f02e957d4f8a1c3745e94fa00, type: 2}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18dfb55f02e957d4f8a1c3745e94fa00, type: 2}
   m_IsPrefabParent: 0
@@ -6191,16 +5996,3 @@ PlatformEffector2D:
   m_SideFriction: 0
   m_SideBounce: 0
   m_SideAngleVariance: 0
---- !u!61 &2137533396
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2137533390}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_Offset: {x: .0285301208, y: 1.22450733}
-  serializedVersion: 2
-  m_Size: {x: 1.05730116, y: .0824522972}
