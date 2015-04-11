@@ -6,6 +6,7 @@
 [Bb]uild
 [Ll]ibrary/
 sysinfo.txt
+<<<<<<< Updated upstream
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -30,3 +31,16 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+=======
+*.sln
+
+*.meta
+>>>>>>> Stashed changes
+
+*.csproj
+
+*.csproj
+
+*.csproj
+
+*.csproj
